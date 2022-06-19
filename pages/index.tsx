@@ -37,7 +37,6 @@ const Home = () => {
       </Head>
       <div>
         <h1>hello there</h1>
-        {/* //@ts-ignore */}
         {data?.items.map((item: any, index: number) => {
           return <div key={index}>{item.html_url}</div>;
         })}
