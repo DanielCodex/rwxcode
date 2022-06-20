@@ -1,6 +1,7 @@
 import Head from "next/head";
 import NavBar from "../components/Navbar";
 import Wrapper from "../components/Wrapper";
+import Form from "../components/Form";
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos voluptates minima vel soluta, aliquid, numquam facilis consequatur magni dolor cumque adipisci sed consectetur quaerat repudiandae totam voluptatum veniam placeat fugiat?
+      <Form />
     </Wrapper>
   );
 };

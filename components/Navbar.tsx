@@ -28,7 +28,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 export default function NavBar() {
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4} mb={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <Box>
@@ -45,7 +45,7 @@ export default function NavBar() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link, index) => (
+              {Links.map((link) => (
                 <NavLink key={link.link}>
                   <Text fontSize={"2xl"}>{link.name}</Text>{" "}
                 </NavLink>
