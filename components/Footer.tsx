@@ -4,8 +4,7 @@ import Link from "next/link";
 function Footer() {
   return (
     // we need left and right otherwise it won't be at center
-    <Box  position="fixed" left="50%" right="50%" bottom="20px">
-
+    <Box position="fixed" left="50%" right="50%" bottom="20px">
       <ul
         style={{
           listStyleType: "none",
@@ -26,6 +25,13 @@ function Footer() {
           <Link href="/about">
             <a>
               <Text _hover={{ color: "gray.500" }}>Contact</Text>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about">
+            <a>
+              <Text _hover={{ color: "gray.500" }}>Example</Text>
             </a>
           </Link>
         </li>
