@@ -1,8 +1,8 @@
 import Head from "next/head";
 import NavBar from "../components/Navbar";
 import Wrapper from "../components/Wrapper";
-import Form from "../components/Form";
 import Footer from "../components/Footer";
+import FormMainPage from "../components/FormMainPage";
 import { useState } from "react";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
       </Head>
       {/*TODO: add nav on the second page */}
       {/* <NavBar /> */}
-      <Form />
+      <FormMainPage />
       <Footer />
     </Wrapper>
   );
