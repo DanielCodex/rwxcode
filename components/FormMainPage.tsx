@@ -11,7 +11,7 @@ import { InfoIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-function Form() {
+function FormMainPage() {
   const [test, setTest] = useState("");
   const router = useRouter();
 
@@ -81,4 +81,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default FormMainPage;
