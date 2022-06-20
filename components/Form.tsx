@@ -8,8 +8,21 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
-export default function Form() {
+function Form() {
+  const [test, setTest] = useState("");
+  const router = useRouter();
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTest(event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
     <Box
       h={"100vh"}
@@ -36,18 +49,26 @@ export default function Form() {
             {/* <FormLabel htmlFor="text" ml="4px">
               Search:
             </FormLabel> */}
-            <Input
-              id="text"
-              type="text"
-              placeholder="Search..."
-              minW={"400px"}
-              w={"600px"}
-              focusBorderColor="blue.500"
-              borderRadius={"20px"}
-              size="lg"
-            />
+            <form onSubmit={handleSubmit}>
+              <Input
+                value={test}
+                id="text"
+                type="text"
+                placeholder="Search..."
+                minW={"400px"}
+                w={"600px"}
+                focusBorderColor="blue.500"
+                borderRadius={"20px"}
+                size="lg"
+                onChange={handleChange}
+              />
+            </form>
             <FormHelperText ml="4px">
-              <Tooltip hasArrow label="Current supported language are javascript and python" p={"8px"}>
+              <Tooltip
+                hasArrow
+                label="Current supported language are javascript and python"
+                p={"8px"}
+              >
                 <InfoIcon mr={"5px"} />
               </Tooltip>
               Example: lang:javascript stars:1..100 label:good-first-issue
@@ -59,3 +80,5 @@ export default function Form() {
     </Box>
   );
 }
+
+export default Form;

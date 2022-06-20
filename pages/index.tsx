@@ -3,8 +3,11 @@ import NavBar from "../components/Navbar";
 import Wrapper from "../components/Wrapper";
 import Form from "../components/Form";
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 const Home = () => {
+
+
   return (
     <Wrapper>
       <Head>
