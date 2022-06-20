@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+// TODO: add the correct link
 const Links = [{ link: "#", name: "About" }];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
@@ -28,7 +29,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 export default function NavBar() {
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4} mb={10}>
+      <Box px={4} mb={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <Box>
