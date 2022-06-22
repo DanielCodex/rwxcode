@@ -8,24 +8,34 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
-import { useState } from "react";
-import { useRouter } from "next/router";
+import { useState, useRef, useEffect } from "react";
+import useFetcher from "../utils/useFetcher";
 
 function FormMainPage() {
-  const [test, setTest] = useState("");
-  const router = useRouter();
+  const [search, setSearch] = useState("");
+  const [style, setStyle] = useState(false);
+  const { data, loading } = useFetcher(
+    "https://jsonplaceholder.typicode.com/todos/2"
+  );
+
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTest(event.target.value);
+    setSearch(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    setStyle(!style);
   };
 
   return (
     <Box
-      h={"100vh"}
+      h={style === false ? "100vh" : ""}
       display="flex"
       justifyContent="center"
       alignItems={"center"}
@@ -51,7 +61,7 @@ function FormMainPage() {
             </FormLabel> */}
             <form onSubmit={handleSubmit}>
               <Input
-                value={test}
+                value={search}
                 id="text"
                 type="text"
                 placeholder="Search..."
@@ -61,6 +71,7 @@ function FormMainPage() {
                 borderRadius={"20px"}
                 size="lg"
                 onChange={handleChange}
+                ref={inputRef}
               />
             </form>
             <FormHelperText ml="4px">
